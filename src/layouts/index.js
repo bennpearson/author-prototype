@@ -5,6 +5,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import { radius, colors, shadow } from "../constants/theme";
 import { Grid, Column } from "../components/Grid";
+import QuestionnaireNav from "../components/QuestionnaireNav";
 
 import "./index.css";
 
@@ -72,13 +73,13 @@ const TemplateWrapper = ({ children, data }) => (
           </Column>
         </Grid>
       </NavWrapper>
-      {data.site.siteMetadata.title}
+      {/*  {data.site.siteMetadata.title} */}
 
       <div>
       </div>
       <Grid align="top">
         <Column cols={2} gutters={false}>
-          sdfdsf
+          <QuestionnaireNav/>
         </Column>
         <Column gutters={false}>
         <Center>

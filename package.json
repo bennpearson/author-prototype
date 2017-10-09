@@ -10,6 +10,7 @@
     "gatsby-plugin-styled-components": "^1.0.5",
     "gatsby-source-filesystem": "^1.5.1",
     "gatsby-transformer-remark": "^1.7.12",
+    "react-d3-tree": "^1.5.0",
     "react-tooltip": "^3.3.0"
   },
   "keywords": [

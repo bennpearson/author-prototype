@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "gatsby-link";
+import RouteMap from "../../components/RouteMap";
 
 export default ({ data }) => {
   console.log(data);
@@ -19,6 +20,7 @@ export default ({ data }) => {
           </Link>
         </div>
       ))}
+      <RouteMap/>
     </div>
   );
 };
