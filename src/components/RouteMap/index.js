@@ -75,15 +75,8 @@ const myTreeData = [
     ],
   },
 ];
-
-export default class MyComponent extends React.Component {
-  render() {
-    return (
-      <DataVis id="treeWrapper">
-
-        <Tree data={myTreeData} translate={svgTranslate} nodeSvgShape={svgSquare}/>
-
-      </DataVis>
-    );
-  }
-}
+export default ({ }) =>
+  <DataVis>
+    <Tree data={myTreeData} translate={svgTranslate} nodeSvgShape={svgSquare}/>
+  </DataVis>
+;
