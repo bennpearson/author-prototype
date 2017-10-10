@@ -4,7 +4,7 @@ date: "2017-08-10"
 answer1: "Chocolate"
 answer2: "Butterscotch"
 answer3: "Mint"
-route1: "Finish survey"
+route1: "Summary"
 ---
 
 2.1 What ice cream would you like?

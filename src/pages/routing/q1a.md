@@ -7,7 +7,7 @@ answer3: "12 inches"
 route1: "Question 1.2 What toppings would you like?"
 route2: "Question 2.1 What cookies would you like?"
 route3: "Question 2.2 What ice cream would you like?"
-route4: "Finish survey" 
+route4: "Summary" 
 ---
 
 1.1 What Base size?

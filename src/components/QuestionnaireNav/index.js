@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
 import { colors } from "../../constants/theme";
+import RoutingError from "../../components/Error/RoutingError";
 import plusIcon from "./icon-plus.svg";
 import sectionIcon from "./icon-section.svg";
 
@@ -88,7 +89,7 @@ const StyledLink = styled(Link)`
   flex: 1 1 auto;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: opacity 100ms ease-out;
 
   &::before {
@@ -126,11 +127,10 @@ const StyledLink = styled(Link)`
 
 const LinkText = styled.span`
   display: inline-block;
-  width: 100%;
   position: relative;
   z-index: 2;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
   text-overflow: ellipsis;
   opacity: ${({ fade }) => (fade ? 0.5 : 1)};
 `;
@@ -171,6 +171,7 @@ const QuestionnaireNav = ({ data }) =>
             <StyledLink to={`/routing/q2a/`} activeClassName="selected">
               <LinkText>
                 2.1 What cookies would you like?
+                <RoutingError/>
               </LinkText>
             </StyledLink>
           </StyledPageItem>
@@ -184,7 +185,13 @@ const QuestionnaireNav = ({ data }) =>
         </NavList>
       </SectionItem>
     </NavList>
-
+    <NavList>
+      <SectionItem>
+        <SectionTitle>
+          Summary
+        </SectionTitle>
+      </SectionItem>
+    </NavList>
   </Container>;
 
 export default QuestionnaireNav;

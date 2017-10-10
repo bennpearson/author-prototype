@@ -1,25 +1,76 @@
 import React from 'react';
 import Tree from 'react-d3-tree';
+import styled from "styled-components";
+
+const DataVis = styled.div`
+  width: 100%;
+  height: 25em;
+  overflow: visible;
+  .nodeNameBase {
+    stroke-width: 0;
+  }
+  .nodeAttributesBase{
+    stroke-width: 0;
+  }
+`;
+
+const svgTranslate = {
+  x: 11,
+  y: 230,
+}
+
+const svgSquare = {
+  shape: 'circle',
+  shapeProps: {
+    r: 10,
+    fill: '#ffffff',
+  }
+}
 
 const myTreeData = [
   {
-    name: 'Top Level',
-    attributes: {
-      keyA: 'val A',
-      keyB: 'val B',
-      keyC: 'val C',
-    },
+    name: 'Q 1.1 Pizza size',
     children: [
       {
-        name: 'Level 2: A',
+        name: 'Q 1.2 Topping',
         attributes: {
-          keyA: 'val A',
-          keyB: 'val B',
-          keyC: 'val C',
+          Routing: 'Basic'
         },
-      },
-      {
-        name: 'Level 2: B',
+        children: [
+          {
+            name: 'Q 2.1 Cookie',
+            attributes: {
+              Routing: 'Advanced'
+            },
+            children: [
+              {
+                name: 'Summary',
+              },
+              {
+                name: 'Q 2.2 Ice cream',
+                children: [
+                  {
+                    name: 'Customer name',
+                    attributes: {
+                      Piped: '{name}'
+                    },
+                    children: [
+                      {
+                        name: 'Summary',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: 'Summary',
+            attributes: {
+              Piped: 'Error - missing {name}'
+            },
+          },
+        ],
       },
     ],
   },
@@ -28,11 +79,11 @@ const myTreeData = [
 export default class MyComponent extends React.Component {
   render() {
     return (
-      <div id="treeWrapper" style={{width: '50em', height: '20em'}}>
+      <DataVis id="treeWrapper">
 
-        <Tree data={myTreeData} />
+        <Tree data={myTreeData} translate={svgTranslate} nodeSvgShape={svgSquare}/>
 
-      </div>
+      </DataVis>
     );
   }
 }

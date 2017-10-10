@@ -5,7 +5,7 @@ answer1: "Chocolate chip"
 answer2: "Double chocolate chunk"
 answer3: "Snickerdoodle"
 route1: "Question 2.2 What ice cream would you like?"
-route2: "Finish survey"
+route2: "Summary"
 ---
 
 2.1 What cookies would you like?
