@@ -5,7 +5,6 @@ import { colors } from "../../constants/theme";
 import RoutingError from "../../components/Error/RoutingError";
 import { get } from "lodash";
 
-
 export const StyledNav = styled.nav`
   margin: 0;
   display: block;
@@ -39,29 +38,17 @@ const StyledLink = styled(Link)`
 `;
 
 const Nav = () => (
-    <StyledNav>
-      <StyledLink
-        to={`/meta`}
-        activeClassName="selected"
-      >
-        Questionnaire meta
-      </StyledLink>
-      <StyledLink
-        to={`/builder`}
-        activeClassName="selected"
-      >
-        Builder
-      </StyledLink>
-      <StyledLink
-        to={`/routing/`}
-        activeClassName="selected"
-      >
-        <ErrorWrapper>
-          Routing
-          <RoutingError/>
-        </ErrorWrapper>
-      </StyledLink>
-    </StyledNav>
+  <StyledNav>
+    <StyledLink to={`/meta`} activeClassName="selected">
+      Questionnaire meta
+    </StyledLink>
+    <StyledLink to={`/builder`} activeClassName="selected">
+      Builder
+    </StyledLink>
+    <StyledLink to={`/routing/`} activeClassName="selected">
+      <ErrorWrapper>Routing</ErrorWrapper>
+    </StyledLink>
+  </StyledNav>
 );
 
 export default Nav;

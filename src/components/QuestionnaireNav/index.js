@@ -170,10 +170,7 @@ const QuestionnaireNav = ({ data }) => (
         <NavList>
           <StyledPageItem>
             <StyledLink to={`/routing/q2a/`} activeClassName="selected">
-              <LinkText>
-                2.1 What cookies would you like?
-                <RoutingError />
-              </LinkText>
+              <LinkText>2.1 What cookies would you like?</LinkText>
             </StyledLink>
           </StyledPageItem>
           <StyledPageItem>
