@@ -1,5 +1,4 @@
-import React from 'react';
-import Tree from 'react-d3-tree';
+import React from "react";
 import styled from "styled-components";
 
 const DataVis = styled.div`
@@ -9,74 +8,73 @@ const DataVis = styled.div`
   .nodeNameBase {
     stroke-width: 0;
   }
-  .nodeAttributesBase{
+  .nodeAttributesBase {
     stroke-width: 0;
+  }
+  .linkBase {
+    stroke: #999;
   }
 `;
 
 const svgTranslate = {
   x: 11,
-  y: 230,
-}
+  y: 230
+};
 
 const svgSquare = {
-  shape: 'circle',
+  shape: "circle",
   shapeProps: {
     r: 10,
-    fill: '#ffffff',
+    fill: "#ffffff"
   }
-}
+};
 
 const myTreeData = [
   {
-    name: 'Q 1.1 Pizza size',
+    name: "Q 1.1 Pizza size",
     children: [
       {
-        name: 'Q 1.2 Topping',
+        name: "Q 1.2 Topping",
         attributes: {
-          Routing: 'Basic'
+          Routing: "Basic"
         },
         children: [
           {
-            name: 'Q 2.1 Cookie',
+            name: "Q 2.1 Cookie",
             attributes: {
-              Routing: 'Advanced'
+              Routing: "Advanced"
             },
             children: [
               {
-                name: 'Summary',
+                name: "Summary"
               },
               {
-                name: 'Q 2.2 Ice cream',
+                name: "Q 2.2 Ice cream",
                 children: [
                   {
-                    name: 'Customer name',
+                    name: "Customer name",
                     attributes: {
-                      Piped: '{name}'
+                      Piped: "{name}"
                     },
                     children: [
                       {
-                        name: 'Summary',
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
+                        name: "Summary"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
-            name: 'Summary',
+            name: "Summary",
             attributes: {
-              Piped: 'Error - missing {name}'
-            },
-          },
-        ],
-      },
-    ],
-  },
+              Piped: "Error - missing {name}"
+            }
+          }
+        ]
+      }
+    ]
+  }
 ];
-export default ({ }) =>
-  <DataVis>
-    <Tree data={myTreeData} translate={svgTranslate} nodeSvgShape={svgSquare}/>
-  </DataVis>
-;
+export default ({}) => <DataVis />;

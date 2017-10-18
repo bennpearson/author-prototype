@@ -13,7 +13,7 @@ const Panel = styled.div`
 `;
 
 const StyledSelect = styled(Select)`
-  padding: 0.7em 2em 0.7em 0.7em
+  padding: 0.7em 2em 0.7em 0.7em;
 `;
 
 const Title = styled.h1`
@@ -50,7 +50,13 @@ export default ({ data }) => {
             <Span>Go to</Span>
           </Column>
           <Column cols={5}>
-            <StyledSelect options={[post.frontmatter.route1, post.frontmatter.route2, post.frontmatter.route3, post.frontmatter.route4]} />
+            <StyledSelect
+              options={[
+                post.frontmatter.route1,
+                post.frontmatter.route2,
+                post.frontmatter.route3
+              ]}
+            />
           </Column>
         </Grid>
       </Panel>
@@ -63,22 +69,34 @@ export default ({ data }) => {
             <Span>Go to</Span>
           </Column>
           <Column cols={5}>
-            <StyledSelect options={[post.frontmatter.route1, post.frontmatter.route2, post.frontmatter.route3, post.frontmatter.route4]} />
+            <StyledSelect
+              options={[
+                post.frontmatter.route1,
+                post.frontmatter.route2,
+                post.frontmatter.route3
+              ]}
+            />
           </Column>
         </Grid>
       </Panel>
       <Panel>
-      <Grid>
-        <Column cols={6}>
-          <AnswerTitle>{post.frontmatter.answer3}</AnswerTitle>
-        </Column>
-        <Column cols={1}>
-          <Span>Go to</Span>
-        </Column>
-        <Column cols={5}>
-          <StyledSelect options={[post.frontmatter.route1, post.frontmatter.route2, post.frontmatter.route3, post.frontmatter.route4]} />
-        </Column>
-      </Grid>
+        <Grid>
+          <Column cols={6}>
+            <AnswerTitle>{post.frontmatter.answer3}</AnswerTitle>
+          </Column>
+          <Column cols={1}>
+            <Span>Go to</Span>
+          </Column>
+          <Column cols={5}>
+            <StyledSelect
+              options={[
+                post.frontmatter.route1,
+                post.frontmatter.route2,
+                post.frontmatter.route3
+              ]}
+            />
+          </Column>
+        </Grid>
       </Panel>
     </div>
   );
@@ -97,7 +115,6 @@ export const query = graphql`
         route1
         route2
         route3
-        route4
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

@@ -51,6 +51,15 @@ const SectionTitle = styled.h3`
   }
 `;
 
+const SectionSubheading = styled.h3`
+  padding: 0.5em 2.5em 0.5em 0.9em;
+  font-size: 0.75em;
+  margin: 0;
+  font-weight: 500;
+  display: flex;
+  color: #999;
+`;
+
 const NavList = styled.ol`
   margin: 0;
   padding: 0;
@@ -106,23 +115,23 @@ const StyledLink = styled(Link)`
     z-index: 1;
   }
   ${StyledPageItem}:hover & {
-  &::before {
+    &::before {
+      opacity: 0.5;
+      width: 100%;
+    }
+  }
+
+  &.selected {
+    &::before {
+      opacity: 1 !important;
+      width: 100%;
+    }
+  }
+
+  &[aria-disabled="true"] {
+    pointer-events: none;
     opacity: 0.5;
-    width: 100%;
   }
-}
-
-&.selected {
-  &::before {
-    opacity: 1 !important;
-    width: 100%;
-  }
-}
-
-&[aria-disabled=true] {
-  pointer-events: none;
-  opacity: 0.5;
-}
 `;
 
 const LinkText = styled.span`
@@ -135,51 +144,41 @@ const LinkText = styled.span`
   opacity: ${({ fade }) => (fade ? 0.5 : 1)};
 `;
 
-const QuestionnaireNav = ({ data }) =>
+const QuestionnaireNav = ({ data }) => (
   <Container id="questionnaire-nav">
     <Title>Questionnaire structure</Title>
     <NavList>
       <SectionItem>
-        <SectionTitle>
-          Pizza
-        </SectionTitle>
+        <SectionTitle>Section 1. Pizza</SectionTitle>
         <NavList>
           <StyledPageItem>
             <StyledLink to={`/routing/q1a/`} activeClassName="selected">
-              <LinkText>
-                1.1 What base size?
-              </LinkText>
+              <LinkText>1.1 What base size?</LinkText>
             </StyledLink>
           </StyledPageItem>
-            <StyledPageItem>
-              <StyledLink to={`/routing/q1b/`} activeClassName="selected">
-                <LinkText>
-                  1.2 What toppings would you like?
-                </LinkText>
-              </StyledLink>
-            </StyledPageItem>
+          <StyledPageItem>
+            <StyledLink to={`/routing/q1b/`} activeClassName="selected">
+              <LinkText>1.2 What toppings would you like?</LinkText>
+            </StyledLink>
+          </StyledPageItem>
         </NavList>
       </SectionItem>
     </NavList>
     <NavList>
       <SectionItem>
-        <SectionTitle>
-          Ice cream sandwich
-        </SectionTitle>
+        <SectionTitle>Section 2. Ice cream sandwich</SectionTitle>
         <NavList>
           <StyledPageItem>
             <StyledLink to={`/routing/q2a/`} activeClassName="selected">
               <LinkText>
                 2.1 What cookies would you like?
-                <RoutingError/>
+                <RoutingError />
               </LinkText>
             </StyledLink>
           </StyledPageItem>
           <StyledPageItem>
             <StyledLink to={`/routing/q2b/`} activeClassName="selected">
-              <LinkText>
-                2.2 What ice cream would you like?
-              </LinkText>
+              <LinkText>2.2 What ice cream would you like?</LinkText>
             </StyledLink>
           </StyledPageItem>
         </NavList>
@@ -187,11 +186,10 @@ const QuestionnaireNav = ({ data }) =>
     </NavList>
     <NavList>
       <SectionItem>
-        <SectionTitle>
-          Summary
-        </SectionTitle>
+        <SectionTitle>Survey summary</SectionTitle>
       </SectionItem>
     </NavList>
-  </Container>;
+  </Container>
+);
 
 export default QuestionnaireNav;
