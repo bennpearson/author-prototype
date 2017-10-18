@@ -1,4 +1,5 @@
 import React from "react";
+import Tree from "react-d3-tree";
 import styled from "styled-components";
 
 const DataVis = styled.div`
@@ -77,4 +78,8 @@ const myTreeData = [
     ]
   }
 ];
-export default ({}) => <DataVis />;
+export default ({}) => (
+  <DataVis>
+    <Tree data={myTreeData} translate={svgTranslate} nodeSvgShape={svgSquare} />
+  </DataVis>
+);

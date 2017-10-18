@@ -46,7 +46,10 @@ const Nav = () => (
       Builder
     </StyledLink>
     <StyledLink to={`/routing/`} activeClassName="selected">
-      <ErrorWrapper>Routing</ErrorWrapper>
+      <ErrorWrapper>
+        Routing
+        <RoutingError />
+      </ErrorWrapper>
     </StyledLink>
   </StyledNav>
 );
